@@ -32,17 +32,25 @@ By doing that, the client part only needs
 to instantiate the class TestRunner and call the runAll method.
 Facadeパターンを適用することで、クライアント側に必要なのはTestRunnerクラスを生成し、runAllメソッドを呼ぶことだけです。
 As seen in the example, the interface provided by the Facade pattern
-is independent from the underlying implementation. Since the client
-just calls the runAll method, we can modify the classes TC1, TC2 or
+is independent from the undrlying implementation.
+このサンプルコードに見られるように、Facadeパターンで提供されるインターフェイスはシステム内部の実装からは切り離され独立しています。
+Since the client just calls the runAll method, we can modify the classes TC1, TC2 or
 TC3 without impact on the way the client uses the system.
+これによって、クライアント側は単純にrunAllメソッドを呼ぶだけで良くなります。クライアント側のクラスが複雑なシステムを使う際に、望まない悪影響を生じることなしに、各クラスTC1,TC2,あるいはTC3のコードに変更を加えられるのです。
 
 *Where is the pattern used practically?
+*実際にどこでこのデザインパターンが使われているか。
 This pattern can be seen in the Python standard library when we use
-the isdir function. Although a user simply uses this function to know
+the isdir function.
+このパターンは、Pythonの標準ライブラリ内のisdir関数を使う際に目にすることができます。
+Although a user simply uses this function to know
 whether a path refers to a directory, the system makes a few
 operations and calls other modules (e.g., os.stat) to give the result.
+あるファイルパスがどのディレクトリを参照しているのかを知るために、ユーザは単純にこの関数を使います。
+しかしながら、求める結果を得るために、システムはいくつかの操作と、いくつかの別のモジュール(例えばos.statです。)を呼んでいるのです。
 
 *References:
+*参考情報
 https://sourcemaking.com/design_patterns/facade
 https://fkromer.github.io/python-pattern-references/design/#facade
 http://python-3-patterns-idioms-test.readthedocs.io/en/latest/ChangeInterface.html#facade
