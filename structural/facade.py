@@ -3,22 +3,34 @@
 
 """
 *What is this pattern about?
+*このパターンの目的
 The Facade pattern is a way to provide a simpler unified interface to
-a more complex system. It provides an easier way to access functions
+a more complex system.
+Facade(ファサード)パターンは、より複雑なシステムに対して、単純で一本化されたインターフェイスを提供する方法です。
+It provides an easier way to access functions
 of the underlying system by providing a single entry point.
-This kind of abstraction is seen in many real life situations. For
-example, we can turn on a computer by just pressing a button, but in
+窓口を一つにすることで、システムの中に組み込まれている見通しの悪い機能群に簡単にアクセスする手段を提供します。
+This kind of abstraction is seen in many real life situations.
+このような抽象化は、多くの現実世界の状況においても見出せます。
+For example, we can turn on a computer by just pressing a button, but in
 fact there are many procedures and operations done when that happens
-(e.g., loading programs from disk to memory). In this case, the button
-serves as an unified interface to all the underlying procedures to
-turn on a computer.
+(e.g., loading programs from disk to memory).
+例えば、ボタンを一つ、ポンと押すだけでコンピュータを起動できます。でもその裏で実際には、たくさんの手順と操作が行われているのです。（例えば、ハードドライブからメモリへプログラムを読み込むことです。）
+In this case, the button serves as an unified interface to all the underlying procedures to turn on a computer.
+このコンピュータ起動の例では、電源ボタンはコンピュータを起動するための、システムの内部にある全ての機能群に対する一本化されたインターフェイス、すなわち窓口として働いているのです。
 
 *What does this example do?
+*このサンプルコードは何をしているのか
 The code defines three classes (TC1, TC2, TC3) that represent complex
-parts to be tested. Instead of testing each class separately, the
+parts to be tested.
+三つのクラス(TC1,TC2,TC3)を定義するコードです。これらのクラスはテストが必要な複雑な部分を持っているとします。
+Instead of testing each class separately, the
 TestRunner class acts as the facade to run all tests with only one
-call to the method runAll. By doing that, the client part only needs
+call to the method runAll.
+個別にテストをする代わりに、TestRunnerクラスがfacadeとして振る舞います。runAllメソッドただ一つを呼ぶことで、全てのテストが実行されます。
+By doing that, the client part only needs
 to instantiate the class TestRunner and call the runAll method.
+Facadeパターンを適用することで、クライアント側に必要なのはTestRunnerクラスを生成し、runAllメソッドを呼ぶことだけです。
 As seen in the example, the interface provided by the Facade pattern
 is independent from the underlying implementation. Since the client
 just calls the runAll method, we can modify the classes TC1, TC2 or
