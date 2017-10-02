@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 """http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
 
-An example of the Template pattern in Python"""
+Pythonで書いたTemplate(テンプレート)パターンのサンプルコード
+"""
 
 ingredients = "spam eggs apple"
 line = '-' * 10
