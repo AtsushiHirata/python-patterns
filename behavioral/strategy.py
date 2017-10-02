@@ -2,13 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 http://stackoverflow.com/questions/963965/how-is-this-strategy-pattern
- -written-in-python-the-sample-in-wikipedia
-In most of other languages Strategy pattern is implemented via creating some
-base strategy interface/abstract class and subclassing it with a number of
-concrete strategies (as we can see at
-http://en.wikipedia.org/wiki/Strategy_pattern), however Python supports
-higher-order functions and allows us to have only one class and inject
-functions into it's instances, as shown in this example.
+WikiPediaに掲載されているPythonで書かれたサンプルコード
+
+他のプログラミング言語のほぼ全てにおいて、Strategy(ストラテジ)パターンは、基本となるstrategyのインターフェイスクラス、あるいはabstractクラスから実装します。そして、そのサブクラスを作ることで、複数の実装のあるstrategyクラスを作るのです。(参照 http://en.wikipedia.org/wiki/Strategy_pattern)しかしながら、Pythonは高階関数をサポートしており、このサンプルコードに示すように、一つのクラスに対して、機能の異なる別の関数を引数として与えて、別の動作をするインスタンスを作ることができます。
 """
 import types
 
