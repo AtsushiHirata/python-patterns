@@ -11,14 +11,16 @@ line = '-' * 10
 
 # Skeletons
 def iter_elements(getter, action):
-    """Template skeleton that iterates items"""
+    """Template skeleton that iterates items
+    要素を順次処理するテンプレートの骨組み"""
     for element in getter():
         action(element)
         print(line)
 
 
 def rev_elements(getter, action):
-    """Template skeleton that iterates items in reverse order"""
+    """Template skeleton that iterates items in reverse order
+    要素を逆順に処理するテンプレートの骨組み"""
     for element in getter()[::-1]:
         action(element)
         print(line)
@@ -50,6 +52,7 @@ def make_template(skeleton, getter, action):
     return template
 
 # Create our template functions
+# 面白いのは、関数のリストをイテレートして実行しているところ。
 templates = [make_template(s, g, a)
              for g in (get_list, get_lists)
              for a in (print_item, reverse_item)
