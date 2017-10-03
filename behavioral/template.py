@@ -40,10 +40,12 @@ def rev_elements(getter, action):
 
 # Getters
 def get_list():
+    """リストをスペースで区切って、ワードのリストにして返す"""
     return ingredients.split()
 
 
 def get_lists():
+    """リストを単文字のリストのリストにして返す"""
     return [list(x) for x in ingredients.split()]
 
 
@@ -75,49 +77,49 @@ for template in templates:
     template()
 
 ### OUTPUT ###
-# spam
+# spam          iter_elements(get_list,print_item)
 # ----------
 # eggs
 # ----------
 # apple
 # ----------
-# apple
+# apple         rev_elements(get_list,print_item)
 # ----------
 # eggs
 # ----------
 # spam
 # ----------
-# maps
+# maps          iter_elements(get_list,reverse_item)
 # ----------
 # sgge
 # ----------
 # elppa
 # ----------
-# elppa
+# elppa         rev_elements(get_list,reverse_item)
 # ----------
 # sgge
 # ----------
 # maps
 # ----------
-# ['s', 'p', 'a', 'm']
+# ['s', 'p', 'a', 'm']    iter_elements(get_lists,print_item)
 # ----------
 # ['e', 'g', 'g', 's']
 # ----------
 # ['a', 'p', 'p', 'l', 'e']
 # ----------
-# ['a', 'p', 'p', 'l', 'e']
+# ['a', 'p', 'p', 'l', 'e']    rev_elements(get_lists,print_item)
 # ----------
 # ['e', 'g', 'g', 's']
 # ----------
 # ['s', 'p', 'a', 'm']
 # ----------
-# ['m', 'a', 'p', 's']
+# ['m', 'a', 'p', 's']    iter_elements(get_lists,reverse_item)
 # ----------
 # ['s', 'g', 'g', 'e']
 # ----------
 # ['e', 'l', 'p', 'p', 'a']
 # ----------
-# ['e', 'l', 'p', 'p', 'a']
+# ['e', 'l', 'p', 'p', 'a']    rev_elements(get_lists,reverse_item)
 # ----------
 # ['s', 'g', 'g', 'e']
 # ----------
