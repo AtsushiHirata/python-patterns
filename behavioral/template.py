@@ -3,6 +3,8 @@
 """http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
 
 Pythonで書いたTemplate(テンプレート)パターンのサンプルコード
+Skeletons,Getters,Actionsで二つずつ用意したメソッドを、make_templateメソッドの引数として与えて、動作するメソッドのリストtemplatesを作っている。
+最後にそのtemplatesからメソッドをイテレータで取り出し、実行している。
 """
 
 ingredients = "spam eggs apple"
@@ -13,6 +15,11 @@ line = '-' * 10
 def iter_elements(getter, action):
     """Template skeleton that iterates items
     要素を順次処理するテンプレートの骨組み"""
+    # 引数として受け取ったgetter,actionを使用。
+    # getterはグローバル変数ingredientsの文字列をリスト化するメソッド。getter()が実行された結果、リストに置き換わる。
+    # このリストから要素を一つづつ「順に」取り出して、elementにセット。
+    # 引数actionはelementを表示するアルゴリズムを内包したメソッド。
+    # print(line)で画面に区切り線を表示。
     for element in getter():
         action(element)
         print(line)
@@ -21,6 +28,11 @@ def iter_elements(getter, action):
 def rev_elements(getter, action):
     """Template skeleton that iterates items in reverse order
     要素を逆順に処理するテンプレートの骨組み"""
+    # 引数として受け取ったgetter,actionを使用。
+    # getterはグローバル変数ingredientsの文字列をリスト化するメソッド。getter()が実行された結果、リストに置き換わる。
+    # このリストから要素を一つづつ「逆順に」取り出して、elementにセット。
+    # 引数actionはelementを表示するアルゴリズムを内包したメソッド。
+    # print(line)で画面に区切り線を表示。
     for element in getter()[::-1]:
         action(element)
         print(line)
