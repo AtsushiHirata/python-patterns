@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 """
-
 *What is this pattern about?
 *このパターンの目的
 The Facade pattern is a way to provide a simpler unified interface to
